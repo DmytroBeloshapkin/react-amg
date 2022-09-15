@@ -1,0 +1,23 @@
+.userSimpson {
+    width: 200px;
+    height: 350px;
+    border: 2px solid #68d4ff;
+    border-radius: 5px;
+    background: azure;
+    justify-content: space-around;
+
+}
+
+.userSimpson > h3 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.userSimpson > p {
+    font-size: 8px;
+}
+
+.userSimpson > img {
+    height: 150px;
+    margin-top: 20px;
+}
