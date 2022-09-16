@@ -10,7 +10,7 @@ function User(props) {
 
             <button onClick={() => {
                 lift(user)
-            }}>info user
+            }}>user address info
             </button>
 
         </div>
