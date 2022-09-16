@@ -8,10 +8,7 @@ function User(props) {
             <h4>{user.id}. {user.name}</h4>
             <p>{user.email}test</p>
 
-            <button onClick={() => {
-                lift(user)
-            }}>info user
-            </button>
+            <button onClick={() => {lift(user)}}>user address info</button>
 
         </div>
     );

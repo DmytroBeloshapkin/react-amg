@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react"
+import {getUsersAxios} from "../../services";
+
 import './style.css'
 import Launch from "./Launch";
-import axios from "axios";
-import {getUsersAxios} from "../../services/user.api.axios";
 
 
 export default function SpaceX() {
@@ -16,19 +16,13 @@ export default function SpaceX() {
 
     return (
         <div className="SpaceX">
-            {launch.map((launch, index) => (<Launch item={launch} key={index}/>))}
+            <h2 className='h2'>from API spacexdata</h2>
+            {launch
+                .filter(value => value.launch_year !== '2020')
+                .map((launch, index) => (
+                <Launch launch={launch} key={index}/>))}
         </div>
     )
 }
 
 
-// mission_name
-// launch_year
-//
-// links.mission_patch_small
-
-// =====
-// є API от SpaceX
-// https://api.spacexdata.com/v3/launches/
-//     потрібно вивести всі запуски кораблів окрім 2020 року
-// репрезентувати тільки окремі поля (зазначені в скрнішоті в папці)

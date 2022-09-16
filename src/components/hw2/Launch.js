@@ -7,8 +7,8 @@ export default function Launch(props) {
     return (
         <div className='launch'>
             <h4>{launch.mission_name}</h4>
-            <h4>{launch.launch_year}</h4>
-            <p>{launch.links.mission_patch_small}</p>
+            <h5>{launch.launch_year}</h5>
+            <img src={launch.links.mission_patch_small} alt={launch.mission_name}/>
         </div>
     );
 }
