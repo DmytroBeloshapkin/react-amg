@@ -1,12 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import {Cars} from "./components";
 
-function App() {
-  return (
-    <div className="App">
-
+const App = () => {
+    return (
+    <div>
+            <Cars/>
     </div>
-  );
-}
+    );
+};
 
-export default App;
+export {App};
