@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 
 import {Car} from "../Car";
 import {get, getCars} from "../services";
+import css from 'Car.module.css'
 
 const Cars = () => {
 
@@ -23,7 +24,7 @@ useEffect(()=>{
 
 
     return (
-        <div>
+        <div className={}>
             <hr/>
             {car && <div> ціна: {car.price} </div>}
             <hr/>
