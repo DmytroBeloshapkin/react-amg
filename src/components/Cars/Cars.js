@@ -6,21 +6,21 @@ import './style.css'
 
 const Cars = () => {
 
-let [cars, setCars] = useState([]);
+    let [cars, setCars] = useState([]);
 
-let [car, setCar] = useState({});
+    let [car, setCar] = useState({});
 
-const lift  = (obj) =>{
-    console.log(obj);
-    setCar(obj);
-}
+    const lift = (obj) => {
+        console.log(obj);
+        setCar(obj);
+    }
 
-useEffect(()=>{
-    // getCars().then(value => setCars(value))
-    // },[])
+    useEffect(() => {
+        // getCars().then(value => setCars(value))
+        // },[])
 
-    get().then(value => setCars(value.data))
-    },[]);
+        get().then(value => setCars(value.data))
+    }, []);
 
 
     return (
@@ -29,13 +29,13 @@ useEffect(()=>{
             {car && <div> ціна: {car.price} </div>}
             <hr/>
 
-        <div className='cars'>
-            {cars.map((car, index) =>
-                (<Car
-                    item={car}
-                    key={index}
-                    lift = {lift}/>))}
-        </div>
+            <div className='cars'>
+                {cars.map((car, index) =>
+                    (<Car
+                        item={car}
+                        key={index}
+                        lift={lift}/>))}
+            </div>
         </div>
     );
 };
