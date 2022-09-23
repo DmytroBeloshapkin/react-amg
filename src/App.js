@@ -1,13 +1,17 @@
-import {Users} from "./components/Users/Users";
+import {Cars} from "./components";
+import {CarsChoser} from "./components/CarsChoser/CarsChoser";
+
 
 function App() {
 
     return (
         <div className="App">
-            <Users/>
-
+            <Cars/>
+            <CarsChoser/>
         </div>
     );
 }
 
 export default App;
+
+
