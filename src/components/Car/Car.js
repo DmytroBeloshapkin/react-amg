@@ -1,9 +1,11 @@
+import './style.css'
+
 const Car = (props) => {
 
     let {item: car, lift} = props;
 
     return (
-        <div>
+        <div className='car'>
             <h5>id:{car.id} - {car.model}</h5>
             <p>{car.price}</p>
             <p>{car.year}</p>

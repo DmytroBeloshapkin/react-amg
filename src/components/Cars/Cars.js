@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 
 import {Car} from "../Car";
-import {get, getCars} from "../services";
-import css from 'Car.module.css'
+import {get} from "../services";
+import './style.css'
 
 const Cars = () => {
 
@@ -24,16 +24,18 @@ useEffect(()=>{
 
 
     return (
-        <div className={}>
+        <div>
             <hr/>
             {car && <div> ціна: {car.price} </div>}
             <hr/>
 
+        <div className='cars'>
             {cars.map((car, index) =>
                 (<Car
                     item={car}
                     key={index}
                     lift = {lift}/>))}
+        </div>
         </div>
     );
 };
