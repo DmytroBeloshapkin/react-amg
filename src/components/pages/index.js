@@ -1,0 +1,5 @@
+export * from './Home/Home'
+export * from './Todos/Todos'
+export * from './Albums/Albubs'
+export * from './Comments/Comments'
+export * from './Posts/Posts'
