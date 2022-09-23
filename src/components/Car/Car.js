@@ -13,8 +13,6 @@ const Car = (props) => {
             <button onClick={()=>{
                 lift(car)
             }}>details</button>
-            <hr/>
-
         </div>
     );
 };
