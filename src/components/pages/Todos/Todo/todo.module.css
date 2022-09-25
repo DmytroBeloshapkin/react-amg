@@ -1,0 +1,12 @@
+.todo {
+    width: 24%;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 5px;
+    background: white;
+}
+
+h4 {
+    margin-left: 10px;
+}

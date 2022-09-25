@@ -1,0 +1,14 @@
+.post{
+    border: 1px solid #027ef9;
+    border-radius: 15px;
+    background: white;
+}
+
+.namePage{
+    text-align: center;
+    font-size: 24px;
+    font-family: "Arial Black", sans-serif;
+    font-style: unset;
+    margin-bottom: 5px;
+    color: #027ef9;
+}

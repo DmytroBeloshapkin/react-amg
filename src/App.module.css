@@ -1,0 +1,50 @@
+body {
+    background: aliceblue;
+}
+
+.topHeader {
+    text-align: center;
+    background: #0080ff;
+    color: white;
+}
+
+h2, h3 {
+    margin: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.button {
+    width: 200px;
+    height: 50px;
+    background: #0080ff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    text-decoration: none;
+}
+
+.button a {
+    color: white;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: rgb(0, 211, 255);
+}
+
+.button:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+    inset 2px 2px 3px rgba(255, 0, 0, 0.6);
+}
+
+
+

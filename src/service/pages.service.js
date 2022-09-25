@@ -1,5 +1,5 @@
 import {axiosInstance} from "./axios.service.api";
-import {baseURL, urls} from "../urls";
+import {urls} from "../urls";
 
 const pageService = {
 
