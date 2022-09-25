@@ -7,6 +7,7 @@ import css from './App.module.css'
 const App = () => {
     return (
         <div>
+
             <div className={css.topHeader}>
                 <h2>Jsonplaceholder viewer</h2>
                 <h3>lesson 4</h3>
@@ -31,9 +32,10 @@ const App = () => {
                 <Route path={'posts'} element={<Posts/>}/>
                 <Route path={'comments/:id'} element={<PostsDetails/>}/>
             </Routes>
+
         </div>
     )
 }
 
-export default App
 
+export {App};
