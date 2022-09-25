@@ -5,4 +5,5 @@ export * from './Posts/Posts/Posts'
 export * from './PostsDetails/PostsDetails'
 export * from './Todos/Todos/Todos'
 export * from './Users/Users/Users'
-export * from '../index'
+
+
