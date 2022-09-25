@@ -1,13 +1,13 @@
-import {axiosInstance} from "./axios.service.api";
+import {axiosServiceApi} from "./axios.service.api";
 import {urls} from "../urls";
 
 const pageService = {
 
-    getTodos: () => axiosInstance(urls.todos),
-    getAlbums: () => axiosInstance(urls.albums),
-    getComments: () => axiosInstance(urls.comments),
-    getPost: () => axiosInstance(urls.posts),
-    getUsers: () => axiosInstance(urls.users),
+    getTodos: () => axiosServiceApi.get(urls.todos),
+    getAlbums: () => axiosServiceApi.get(urls.albums),
+    getComments: () => axiosServiceApi.get(urls.comments),
+    getPost: () => axiosServiceApi.get(urls.posts),
+    getUsers: () => axiosServiceApi.get(urls.users)
 }
 export {pageService}
 
