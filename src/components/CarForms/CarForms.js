@@ -14,7 +14,7 @@ const CarForms = ({setCars}) => {
     useEffect(()=>{
         setValue('model', 'name')
         setValue('price', 0)
-        setValue('year', 0)
+        setValue('year', 1990)
     },[])
 
     const submit = async (car) =>{
