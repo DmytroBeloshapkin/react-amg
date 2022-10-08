@@ -1,2 +1,2 @@
-export let fetch = fetch('https://jsonplaceholder.typicode.com/users')
+export let fetchServiceApi = fetch('https://jsonplaceholder.typicode.com/users')
     .then((value) => value.json())
