@@ -1,27 +1,31 @@
 import {useEffect, useState} from "react";
 
 import {User} from "../user";
-import {fetchServiceApi} from "../../service";
+import {getUsersAxios} from "../../service";
 
 
 const Users = () => {
 
     let [users, setUsers] = useState([])
+    let [user, setUser] = useState(null)
+
+    const lift = (obj) =>{
+        setUser(obj)
+    }
 
     useEffect(() => {
-        fetchServiceApi.then(value => {
-            setUsers(value.slice(0,2))
-            console.log(value);
+        getUsersAxios().then(value => {
+            setUsers(value.data.slice(0,5))
+            console.log(value.data);
         })
     },[])
 
-
-
     return (
         <div>
-            {
-                users.map((user, index) => <User key={index} user={user}/>)
-            }
+            <hr/>
+            {user && <div>{JSON.stringify(user)}</div>}
+            <hr/>
+            {users.map((user, index) => <User key={index} user={user} lift={lift}/>)}
         </div>
     );
 };

@@ -1,11 +1,15 @@
-const User = ({user}) => {
+const User = ({user, lift}) => {
     return (
     <div>
         <h4>{user.id}. {user.name}</h4>
         <p>{user.email}</p>
         <p>{user.phone}</p>
         <p>{user.address.city}</p>
-        <p>{JSON.stringify(user)}</p>
+
+        <button onClick={()=>{
+            lift(user)
+        }}>details</button>
+
         <hr/>
     </div>
     );
