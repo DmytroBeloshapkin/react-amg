@@ -5,26 +5,44 @@ import {joiResolver} from "@hookform/resolvers/joi";
 import {carValidatro} from "../validators";
 import {carService} from "../../service";
 
-const CarForm = ({setCars}) => {
+const CarForm = ({setCars, carForUpdate, setCarForUpdate}) => {
 
     const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm({
         resolver: joiResolver(carValidatro),
         mode: 'all'
     })
 
-    useEffect(() => {
-        setValue('model', 'Mercedes')
-        setValue('price', '15000')
-        setValue('year', '2012')
-    }, [])
 
+    useEffect(() => {
+        if (carForUpdate) {
+            setValue('model', carForUpdate.model, {shouldValidate: true})
+            setValue('price', carForUpdate.price, {shouldValidate: true})
+            setValue('year', carForUpdate.year, {shouldValidate: true})
+        }
+    }, [carForUpdate, setValue])
+
+    // useEffect(() => {
+    //     setValue('model', 'Mercedes')
+    //     setValue('price', '15000')
+    //     setValue('year', '2012')
+    // }, [setValue])
 
     const submit = async (car) => {
-        const {data} = await carService.create(car)
-        console.log(data)
-        setCars(cars => [...cars, data])
+        if (carForUpdate) {
+            const {data} = await carService.updateById(carForUpdate.id, car);
+            setCars((cars) => {
+                const findCar = cars.find(value => value.id === carForUpdate.id);
+                Object.assign(findCar, data)
+                setCarForUpdate(null)
+                return [...cars]
+            })
+        } else {
+            const {data} = await carService.create(car);
+            setCars(cars => [...cars, data])
+        }
+
         reset()
-    }
+    };
 
     return (
         // <form onSubmit={handleSubmit(submit)} onChange={() => {
@@ -44,7 +62,7 @@ const CarForm = ({setCars}) => {
             <input type="text" placeholder={'model'} {...register('model')}/>
             <input type="number" placeholder={'price'} {...register('price', {valueAsNumber: true})}/>
             <input type="number" placeholder={'year'} {...register('year', {valueAsNumber: true})}/>
-            <button disabled={!isValid}>Save</button>
+            <button disabled={!isValid}>{carForUpdate ?' Update' : 'Save'}</button>
 
             <div>
                 {errors.model && <span>{errors.model.message}</span>}

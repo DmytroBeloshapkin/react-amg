@@ -1,7 +1,7 @@
 import css from './Car.module.css'
 import {carService} from "../../service";
 
-const Car = ({car, setCars}) => {
+const Car = ({car, setCars, setCarForUpdate}) => {
 
     const {id, model, price, year} = car;
 
@@ -14,9 +14,7 @@ const Car = ({car, setCars}) => {
         })
     }
 
-    const updateCar = async () => {
-        console.log(car)
-    }
+
 
     return (
         <div className={css.Car}>
@@ -27,7 +25,7 @@ const Car = ({car, setCars}) => {
                 <div>year: {year}</div>
             </div>
             <div className={css.tolls}>
-                <button onClick={() => updateCar()}>Update</button>
+                <button onClick={() => setCarForUpdate(car)}>Update</button>
                 <button onClick={() => deleteCar()}>Delete</button>
             </div>
 
